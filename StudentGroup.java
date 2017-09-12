@@ -14,75 +14,110 @@ import java.util.Date;
 public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
-	
-	/**
+	public int len;
+public int c=0;	/**
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
 	 */
 	public StudentGroup(int length) {
 		this.students = new Student[length];
+		len=length;
+	
 	}
 
 	@Override
 	public Student[] getStudents() {
+		//StudentArrayOperation s=new StudentArrayOperation();
+		for(int i=0;i<len;i++)
+		{
+
+		getStudent(i);
+		
+
+
+		}
+
 		// Add your implementation here
-		student s1=new student(1,"sonu","1996-07-07",78.0);
-		s1.getId();
-		s1.getFullName();
-		s1.getBirthDate();
-                s1.getAvgMark();
 		return null;
 	}
 
 	@Override
 	public void setStudents(Student[] students) {
-		// Add your implementation here
+
 	}
 
 	@Override
 	public Student getStudent(int index) {
-		// Add your implementation here
-		return null;
+		System.out.println(students[index].getId());
+		System.out.println(students[index].getFullName());
+System.out.println(students[index].getBirthDate());
+System.out.println(students[index].getAvgMark());
+return null;
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
-		// Add your implementation here
+		add(student,index);
+// Add your implementation here
 	}
 
 	@Override
 	public void addFirst(Student student) {
-		// Add your implementation here
+for(int i=0;i<c;i++)
+{
+students[i+1]=students[i];
+}
+students[0]=student;		// Add your implementation here
+c++;		// Add your implementation here
 	}
 
 	@Override
 	public void addLast(Student student) {
-		// Add your implementation here
+students[c++]=student;	
+	// Add your implementation here
 	}
 
 	@Override
 	public void add(Student student, int index) {
-		// Add your implementation here
-	}
+		//add(student,index);	
+for(int i=index;i<c;i++)
+{
+students[i+1]=students[i];
+
+
+}
+students[index]=student;	// Add your implementation here
+c++;	}
 
 	@Override
 	public void remove(int index) {
-		// Add your implementation here
+/*			for(int i=index;i<c;i++)
+{
+students[i]=students[i-1];
+
+
+}
+students[index]=student;	// Add your implementation here
+c++;
+*/		// Add your implementation here
 	}
 
 	@Override
 	public void remove(Student student) {
-		// Add your implementation here
+		removeFromElement(student);
+// Add your implementation here
 	}
 
 	@Override
 	public void removeFromIndex(int index) {
+	removeFromIndex(index);
 		// Add your implementation here
 	}
 
 	@Override
 	public void removeFromElement(Student student) {
-		// Add your implementation here
+		removeFromElement(student);
+// Add your implementation here
 	}
 
 	@Override
@@ -97,7 +132,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void bubbleSort() {
-		// Add your implementation here
+	// Add your implementation here
 	}
 
 	@Override
